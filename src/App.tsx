@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Game from "./components/Game/Game";

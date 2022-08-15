@@ -1,15 +1,21 @@
+import { ICard } from "../../interfaces/ICard";
 import CardItem from "../CardItem/CardItem";
 import "./Card.scss";
 
-type Props = {};
+// type Props = {
+//   cardType: string;
+//   count: number;
+//   color: string;
+// };
 
-const Card: React.FC = (props: Props) => {
+const Card: React.FC<ICard> = (props) => {
+  console.log(props);
   return (
     <div className='card carditems-2'>
-      <CardItem str='O' />
+      {/* <CardItem str='O' />
       <CardItem str='P' />
 
-      <CardItem str='H' />
+      <CardItem str='H' /> */}
       {/* <CardItem str='B' /> */}
     </div>
   );
