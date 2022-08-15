@@ -1,0 +1,17 @@
+.card
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dotted green;
+  width: 5rem;
+  height: 5rem;
+  margin: .15rem;
+
+  background: url(./assets/background.png) no-repeat center;
+  background-size:100%;
+}
+
+.carditems-2, .carditems-4{  
+  flex-wrap: wrap;
+}

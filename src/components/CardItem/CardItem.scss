@@ -1,10 +1,10 @@
-.board{
+.carditem{
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  
-  padding: .1rem;
+  margin: .1rem;
+  width: 2rem;
+  height: 2rem;
   border: 1px dotted green;
-  width: 22rem;
+  // padding: .1rem;
 }
