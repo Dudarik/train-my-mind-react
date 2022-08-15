@@ -11,7 +11,8 @@ import "./Card.scss";
 const Card: React.FC<ICard> = (props) => {
   console.log(props);
   return (
-    <div className='card carditems-2'>
+    <div className='card'>
+      {}
       {/* <CardItem str='O' />
       <CardItem str='P' />
 
