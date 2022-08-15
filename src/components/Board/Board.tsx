@@ -1,9 +1,27 @@
-import React from "react";
+import Square from "../Square/Square";
+import "./Board.scss";
 
-type Props = {};
-
-const Board = (props: Props) => {
-  return <div>Board</div>;
+const Board: React.FC = () => {
+  return (
+    <div className='board'>
+      <Square />
+      <Square />
+      <Square />
+      <Square />
+      <Square />
+      <Square />
+      <Square />
+      <Square />
+      <Square />
+      <Square />
+      <Square />
+      <Square />
+      <Square />
+      <Square />
+      <Square />
+      <Square />
+    </div>
+  );
 };
 
 export default Board;

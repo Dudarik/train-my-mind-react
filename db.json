@@ -1,4 +1,30 @@
 {
+  "gameData":[
+    [
+      {"cardType":"lamp", "count":4, "color":"red"},
+      {"cardType":"battery", "count":2, "color":"green"},
+      {"cardType":"gear", "count":3, "color":"yellow"},
+      {"cardType":"tool", "count":1, "color":"blue"}      
+    ],
+    [
+      {"cardType":"lamp", "count":2, "color":"green"},
+      {"cardType":"battery", "count":2, "color":"green"},
+      {"cardType":"gear", "count":3, "color":"yellow"},
+      {"cardType":"battery", "count":1, "color":"blue"}      
+    ],
+    [
+      {"cardType":"lamp", "count":4, "color":"red"},
+      {"cardType":"tool", "count":2, "color":"blue"},
+      {"cardType":"gear", "count":4, "color":"yellow"},
+      {"cardType":"tool", "count":1, "color":"blue"}      
+    ],
+    [
+      {"cardType":"battery", "count":4, "color":"red"},
+      {"cardType":"battery", "count":2, "color":"green"},
+      {"cardType":"gear", "count":3, "color":"yellow"},
+      {"cardType":"tool", "count":1, "color":"blue"}      
+    ]
+  ],
   "posts": [
     {
       "id": 1,

@@ -1,9 +1,9 @@
-import React from "react";
+import "./Square.scss";
 
 type Props = {};
 
-const Square = (props: Props) => {
-  return <div>Square</div>;
+const Square: React.FC = (props: Props) => {
+  return <div className='square'></div>;
 };
 
 export default Square;

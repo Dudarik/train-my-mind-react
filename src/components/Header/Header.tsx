@@ -1,5 +1,6 @@
-const Header = () => {
-  return <div className=''>Mind Games</div>;
+import "./Header.scss";
+const Header: React.FC = () => {
+  return <div className='header'>Mind Games</div>;
 };
 
 export default Header;
