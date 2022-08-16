@@ -1,5 +1,5 @@
-export interface ICard {
-  cardType: string;
+import { ICardItem } from "./ICardItem";
+
+export interface ICard extends ICardItem {
   count: number;
-  color: string;
 }

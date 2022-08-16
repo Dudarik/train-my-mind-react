@@ -9,6 +9,8 @@ const Lamp = (props: Props) => {
       fill={color}
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 55.254 55.254'
+      width={55}
+      height={55}
       // style={{
       //   enableBackground: "new 0 0 55.254 55.254",
       // }}

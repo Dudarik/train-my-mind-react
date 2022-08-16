@@ -10,8 +10,8 @@ const Tool = (props: Props) => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 376.846 376.846'
-      width={376.846}
-      height={376.846}
+      width={32}
+      height={32}
       fill={color}
       // style={{
       //   enableBackground: "new 0 0 376.846 376.846",

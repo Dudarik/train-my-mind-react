@@ -1,17 +1,55 @@
 .card
-{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+{  // border: 1px dotted green;
+  
+  padding: 0.1rem;
 
-  flex-wrap: wrap;
-
-  border: 1px dotted green;
+  margin: .15rem;
 
   width: 5rem;
   height: 5rem;
-  margin: .15rem;
+  
+
+  &.cardopen {
+    .front {
+      transform: perspective(600px) rotateY(-180deg);
+    }
+
+    .back {
+      transform: perspective(600px) rotateY(0);
+    }
+  }
+}
+.front,
+.back {
+  width: 5rem;
+  height: 5rem;
+  
+  overflow: hidden;
+  position: absolute;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; // For Safari
+
+  transition: transform .5s ease;
+
+  border-radius: .5rem;
 
   background: url(./assets/background.png) no-repeat center;
   background-size:100%;
+  
 }
+
+.front {
+  
+  transform: perspective(600px) rotateY(0);
+}
+
+.back {
+  transform: perspective(600px) rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
