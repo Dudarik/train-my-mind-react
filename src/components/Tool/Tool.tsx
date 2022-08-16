@@ -1,15 +1,18 @@
 import React from "react";
 
-type Props = {};
+type Props = {
+  color: string;
+};
 
 const Tool = (props: Props) => {
+  const { color } = props;
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 376.846 376.846'
       width={376.846}
       height={376.846}
-      fill='#11FF44'
+      fill={color}
       // style={{
       //   enableBackground: "new 0 0 376.846 376.846",
       // }}

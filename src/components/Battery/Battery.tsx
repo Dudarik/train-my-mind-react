@@ -1,14 +1,17 @@
 import React from "react";
 
-type Props = {};
+type Props = {
+  color: string;
+};
 
 const Battery = (props: Props) => {
+  const { color } = props;
   return (
     <svg
       width={512}
       height={512}
       viewBox='0 0 512 512'
-      fill='#ff2223'
+      fill={color}
       xmlns='http://www.w3.org/2000/svg'
       {...props}>
       <title>{"ionicons-v5-d"}</title>

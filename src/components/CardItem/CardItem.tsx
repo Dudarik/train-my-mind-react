@@ -9,10 +9,10 @@ const CardItem: React.FC<ICardItem> = (props) => {
   console.log(props.color);
   return (
     <div className='carditem'>
-      {props.cardType === "lamp" && <Lamp />}
+      {props.cardType === "lamp" && <Lamp color={props.color} />}
       {props.cardType === "gear" && <Gear color={props.color} />}
-      {props.cardType === "battery" && <Battery />}
-      {props.cardType === "tool" && <Tool />}
+      {props.cardType === "battery" && <Battery color={props.color} />}
+      {props.cardType === "tool" && <Tool color={props.color} />}
       {/* <Gear color={"#22FF22"} /> */}
       {/* <Lamp /> */}
       {/* <Battery /> */}

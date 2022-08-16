@@ -1,11 +1,12 @@
-import React from "react";
-
-type Props = {};
+type Props = {
+  color: string;
+};
 
 const Lamp = (props: Props) => {
+  const { color } = props;
   return (
     <svg
-      fill='#1133FF'
+      fill={color}
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 55.254 55.254'
       // style={{

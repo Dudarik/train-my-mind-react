@@ -11,13 +11,13 @@ const LAMP = "lamp",
 
 const COLOR_RED = "#ff0000",
   COLOR_GREEN = "#00FF00",
-  COLOR_BLUE = "#0000FF",
+  COLOR_BLUE = "#00bFFF",
   COLOR_YELLOW = "#FFFF00";
 
 const mockData: ICard[] = [
-  { cardType: LAMP, count: 4, color: COLOR_RED },
+  { cardType: LAMP, count: 4, color: COLOR_BLUE },
   { cardType: BATTERY, count: 2, color: COLOR_GREEN },
-  { cardType: GEAR, count: 3, color: COLOR_YELLOW },
+  { cardType: GEAR, count: 1, color: COLOR_BLUE },
   { cardType: BATTERY, count: 4, color: COLOR_RED },
 
   { cardType: LAMP, count: 2, color: COLOR_GREEN },
@@ -31,9 +31,9 @@ const mockData: ICard[] = [
   { cardType: TOOL, count: 1, color: COLOR_BLUE },
 
   { cardType: BATTERY, count: 2, color: COLOR_GREEN },
-  { cardType: GEAR, count: 3, color: COLOR_YELLOW },
+  { cardType: GEAR, count: 2, color: COLOR_RED },
   { cardType: TOOL, count: 1, color: COLOR_BLUE },
-  { cardType: TOOL, count: 1, color: COLOR_BLUE },
+  { cardType: TOOL, count: 3, color: COLOR_GREEN },
 ];
 
 const Board: React.FC = () => {
