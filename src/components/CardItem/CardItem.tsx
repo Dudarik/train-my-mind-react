@@ -5,19 +5,16 @@ import Battery from "../Battery/Battery";
 import Tool from "../Tool/Tool";
 import { ICardItem } from "../../interfaces/ICardItem";
 import EmptyItem from "../EmpyItem/EmptyItem";
+import { BATTERY, GEAR, LAMP, TOOL } from "../../const";
 
 const CardItem: React.FC<ICardItem> = (props) => {
   return (
     <div className='carditem'>
       {props.cardType === "empty" && <EmptyItem />}
-      {props.cardType === "lamp" && <Lamp color={props.color} />}
-      {props.cardType === "gear" && <Gear color={props.color} />}
-      {props.cardType === "battery" && <Battery color={props.color} />}
-      {props.cardType === "tool" && <Tool color={props.color} />}
-      {/* <Gear color={"#22FF22"} /> */}
-      {/* <Lamp /> */}
-      {/* <Battery /> */}
-      {/* <Tool /> */}
+      {props.cardType === LAMP && <Lamp color={props.cardColor} />}
+      {props.cardType === GEAR && <Gear color={props.cardColor} />}
+      {props.cardType === BATTERY && <Battery color={props.cardColor} />}
+      {props.cardType === TOOL && <Tool color={props.cardColor} />}
     </div>
   );
 };

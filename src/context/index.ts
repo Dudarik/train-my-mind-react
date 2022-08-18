@@ -1,12 +1,22 @@
-import React, { createContext, ReactNode } from "react";
+import { createContext } from "react";
 import { IGameContext } from "../interfaces/IGameContext";
 
-export const GameContext = createContext<IGameContext | null>(null);
-
-export const contextProvider = (children: React.FC) => {
-  const contextValue: IGameContext = {
-    cards: [{ id: 1, cardType: "lamp", count: 2, color: "red" }],
-    score: 0,
-  };
-  // return (<GameContext.provider value={contextValue}>{children}</GameContext.provider>)
+const defaultContext: IGameContext = {
+  cards: [],
+  score: 0,
+  tryCount: 0,
+  round: 1,
+  bestScore: 0,
 };
+
+export const GameContext = createContext(defaultContext);
+
+// export const contextProvider = (o: any) => {
+//   const { children } = o;
+
+//   console.log(children);
+
+//   // return (
+//   //   <GameContext.provider value={contextValue}>{children}</GameContext.provider>
+//   // );
+// };
