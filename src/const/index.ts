@@ -19,9 +19,9 @@ export const ARRAY_OF_CARD_TYPES: string[] = [LAMP, BATTERY, GEAR, TOOL];
 /**
  * Colors of the items
  */
-export const CARD_ITEMS_COLOR_RED = "#CC0000",
-  CARD_ITEMS_COLOR_GREEN = "#00EE00",
-  CARD_ITEMS_COLOR_BLUE = "#00bFFF",
+export const CARD_ITEMS_COLOR_RED = "#EA4335",
+  CARD_ITEMS_COLOR_GREEN = "#34f853",
+  CARD_ITEMS_COLOR_BLUE = "#4285ff",
   CARD_ITEMS_COLOR_YELLOW = "#FFFF00";
 
 /**

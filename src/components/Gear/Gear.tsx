@@ -7,8 +7,9 @@ const Gear: React.FC<Props> = (props: Props) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      width={24}
-      height={24}
+      width='85%'
+      height='85%'
+      viewBox='0 0 24 24'
       fill={color}
       {...props}>
       <path d='M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm0 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8z' />
