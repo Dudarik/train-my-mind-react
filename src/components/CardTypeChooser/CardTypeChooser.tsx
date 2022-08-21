@@ -1,5 +1,5 @@
 import React from "react";
-import { BATTERY } from "../../const";
+import { BATTERY, GEAR, LAMP, TOOL } from "../../const";
 import Battery from "../Battery/Battery";
 import Gear from "../Gear/Gear";
 import Lamp from "../Lamp/Lamp";
@@ -16,13 +16,15 @@ const CardTypesChooser: React.FC<Props> = (props: Props) => {
 
   const handleCardTypesChooser = (
     event: React.FormEvent<HTMLInputElement>
-  ): void => {};
+  ): void => {
+    
+  };
 
   // console.log(cardType, cardColor);
   return (
     <div className='chooser-container'>
       <form className='chooser-form'>
-        <label htmlFor='battery'>
+        <label htmlFor={BATTERY}>
           <input
             type='radio'
             name='rating'
@@ -36,38 +38,44 @@ const CardTypesChooser: React.FC<Props> = (props: Props) => {
           <Battery color={cardColor} />
         </label>
 
-        <label htmlFor='happy'>
+        <label htmlFor={GEAR}>
           <input
             type='radio'
             name='rating'
-            className='happy'
-            id='happy'
-            value='happy'
+            className={`chooser-${GEAR}`}
+            id={GEAR}
+            value={GEAR}
             radioGroup='cardtypechooser'
+            checked={cardType === GEAR}
+            onChange={handleCardTypesChooser}
           />
           <Gear color={cardColor} />
         </label>
 
-        <label htmlFor='neutral'>
+        <label htmlFor={LAMP}>
           <input
             type='radio'
             name='rating'
-            className='neutral'
-            id='neutral'
-            value='neutral'
+            className={`chooser-${LAMP}`}
+            id={LAMP}
+            value={LAMP}
             radioGroup='cardtypechooser'
+            checked={cardType === LAMP}
+            onChange={handleCardTypesChooser}
           />
           <Lamp color={cardColor} />
         </label>
 
-        <label htmlFor='sad'>
+        <label htmlFor={TOOL}>
           <input
             type='radio'
             name='rating'
-            className='sad'
-            id='sad'
-            value='sad'
+            className={`chooser-${TOOL}`}
+            id={TOOL}
+            value={TOOL}
             radioGroup='cardtypechooser'
+            checked={cardType === TOOL}
+            onChange={handleCardTypesChooser}
           />
           <Tool color={cardColor} />
         </label>

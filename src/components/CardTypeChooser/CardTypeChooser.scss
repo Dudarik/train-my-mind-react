@@ -50,21 +50,21 @@ input[class="chooser-battery"]:focus + svg {
   fill: rgb(0, 109, 217);
 }
 
-input[class="happy"]:hover + svg,
-input[class="happy"]:checked + svg,
-input[class="happy"]:focus + svg {
+input[class="chooser-gear"]:hover + svg,
+input[class="chooser-gear"]:checked + svg,
+input[class="chooser-gear"]:focus + svg {
   fill: rgb(0, 204, 79);
 }
 
-input[class="neutral"]:hover + svg,
-input[class="neutral"]:checked + svg,
-input[class="neutral"]:focus + svg {
+input[class="chooser-lamp"]:hover + svg,
+input[class="chooser-lamp"]:checked + svg,
+input[class="chooser-lamp"]:focus + svg {
   fill: rgb(232, 214, 0);
 }
 
-input[class="sad"]:hover + svg,
-input[class="sad"]:checked + svg,
-input[class="sad"]:focus + svg {
+input[class="chooser-tool"]:hover + svg,
+input[class="chooser-tool"]:checked + svg,
+input[class="chooser-tool"]:focus + svg {
   fill: rgb(229, 132, 0);
 }
 

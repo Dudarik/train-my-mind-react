@@ -3,37 +3,37 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Game from "./components/Game/Game";
 import Header from "./components/Header/Header";
-import { ARRAY_OF_CARD_COLORS, ARRAY_OF_CARD_TYPES } from "./const";
+// import { ARRAY_OF_CARD_COLORS, ARRAY_OF_CARD_TYPES } from "./const";
 
-import { GameContext } from "./context";
+import { GameProvider } from "./context";
 
-import { generateNewField } from "./helpers/generateNewField";
-import { getRandomCardType, getRandomColor } from "./helpers/randomGenerator";
+// import { generateNewField } from "./helpers/generateNewField";
+// import { getRandomCardType, getRandomColor } from "./helpers/randomGenerator";
 
-import { ICard } from "./interfaces/ICard";
-import { IGameContext } from "./interfaces/IGameContext";
+// import { ICard } from "./interfaces/ICard";
+// import { IGameContext } from "./interfaces/IGameContext";
 
-const defaultTargetCardValue: ICard = {
-  countItem: 1,
-  cardOpen: true,
-  id: 1000,
-  cardType: ARRAY_OF_CARD_TYPES[getRandomCardType()],
-  cardColor: ARRAY_OF_CARD_COLORS[getRandomColor()],
-};
+// const defaultTargetCardValue: ICard = {
+//   countItem: 1,
+//   cardOpen: true,
+//   id: 1000,
+//   cardType: ARRAY_OF_CARD_TYPES[getRandomCardType()],
+//   cardColor: ARRAY_OF_CARD_COLORS[getRandomColor()],
+// };
 
-const contextValue: IGameContext = {
-  cards: generateNewField(),
-  userChooseCard: defaultTargetCardValue,
-  targetCardID: 0,
-  score: 0,
-  tryCount: 0,
-  round: 1,
-  bestScore: 0,
-};
+// const contextValue: IGameContext = {
+//   cards: generateNewField(),
+//   userChooseCard: defaultTargetCardValue,
+//   targetCardID: 0,
+//   score: 0,
+//   tryCount: 0,
+//   round: 1,
+//   bestScore: 0,
+// };
 
 function App() {
   return (
-    <GameContext.Provider value={contextValue}>
+    <GameProvider>
       <div className='App'>
         <Header />
         <main>
@@ -41,7 +41,7 @@ function App() {
         </main>
         <Footer />
       </div>
-    </GameContext.Provider>
+    </GameProvider>
   );
 }
 

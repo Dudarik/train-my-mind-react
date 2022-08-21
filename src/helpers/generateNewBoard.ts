@@ -10,7 +10,7 @@ import {
   getRandomColor,
 } from "./randomGenerator";
 
-export const generateNewField = (): ICard[] => {
+export const generateNewBoard = (): ICard[] => {
   const newField: ICard[] = [];
   for (let i = 0; i < COUNT_CARDS; i++) {
     const newCard: ICard = {

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect } from "react";
 
 import { ICard } from "../../interfaces/ICard";
 import Card from "../Card/Card";
@@ -6,9 +6,17 @@ import Card from "../Card/Card";
 import "./Board.scss";
 
 import { GameContext } from "../../context";
+import { actionGameTypes } from "../../context/gameReducer";
+import { generateNewBoard } from "../../helpers/generateNewBoard";
 
 const Board: React.FC = () => {
-  const { cards } = useContext(GameContext);
+  const { state, dispatch } = useContext(GameContext);
+
+  useEffect(() => {
+    dispatch({ type: actionGameTypes.loadCards, payload: generateNewBoard() });
+  }, []);
+
+  const { cards } = state;
 
   return (
     <div className='board'>

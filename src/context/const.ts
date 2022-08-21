@@ -1,0 +1,11 @@
+export const LOAD_CARDS = "LOAD_CARDS";
+
+export const CHANGE_UCS_COUNT_ITEM = "CHANGE_UCS_COUNT_ITEM";
+export const CHANGE_UCS_CARD_TYPE = "CHANGE_UCS_CARD_TYPE";
+export const CHANGE_UCS_CARD_COLOR = "CHANGE_UCS_CARD_COLOR";
+
+export const SET_TARGET_CARD_ID = "SET_TARGET_CARD_ID";
+export const SET_SCORE = "SET_SCORE";
+export const SET_TRY_COUNT = "SET_TRY_COUNT";
+export const SET_ROUND = "SET_ROUND";
+export const SET_BEST_SCORE = "SET_BEST_SCORE";

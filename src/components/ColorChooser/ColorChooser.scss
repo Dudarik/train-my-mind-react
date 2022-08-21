@@ -11,19 +11,6 @@ $colors: (
   pink: #e03997,
 );
 
-// * {
-//   box-sizing: border-box;
-// }
-
-// body {
-//   position: absolute;
-//   top: 35%;
-//   left: 35%;
-//   transform: translate(-35%, -35%);
-//   font-family: 'lato';
-//   color: #333;
-// }
-
 input[type="radio"] {
   display: none;
   &:checked + label {

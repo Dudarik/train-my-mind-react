@@ -8,7 +8,9 @@ import ColorChooser from "../ColorChooser/ColorChooser";
 import CountCardItemsChooser from "../../CountCardItemsChooser/CountCardItemsChooser";
 
 const GameControls: React.FC = () => {
-  const { userChooseCard } = useContext(GameContext);
+  const { state, dispatch } = useContext(GameContext);
+
+  const { userChooseCard } = state;
   console.log(userChooseCard);
   return (
     <div className='gamecontrols'>
