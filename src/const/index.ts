@@ -9,7 +9,8 @@ export const COUNT_CARDS = 16;
 export const LAMP = "lamp",
   BATTERY = "battery",
   GEAR = "gear",
-  TOOL = "tool";
+  TOOL = "tool",
+  NO_ICON = "noicon";
 
 /**
  * Array for generate cards

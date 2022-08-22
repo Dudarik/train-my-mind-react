@@ -1,16 +1,17 @@
 import { useContext } from "react";
-import { BATTERY, GEAR, LAMP, TOOL } from "../../const";
+import { BATTERY, GEAR, LAMP, NO_ICON, TOOL } from "../../const";
 import { GameContext } from "../../context";
 import { actionChooseCardTypes } from "../../context/gameReducer";
 import Battery from "../Battery/Battery";
 import Gear from "../Gear/Gear";
 import Lamp from "../Lamp/Lamp";
+import NoIcon from "../NoIcon/NoIcon";
 import Tool from "../Tool/Tool";
 import "./CardTypeChooser.scss";
 
 const CardTypesChooser: React.FC = () => {
-  const { state, dispatch } = useContext(GameContext);
-  const { cardType, cardColor } = state.userChooseCard;
+  const { gameCTX, dispatch } = useContext(GameContext);
+  const { cardType, cardColor } = gameCTX.userChooseCard;
 
   const handleCardTypesChooser = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -24,6 +25,19 @@ const CardTypesChooser: React.FC = () => {
   return (
     <div className='chooser-container'>
       <form className='chooser-form'>
+        <label htmlFor={NO_ICON}>
+          <input
+            type='radio'
+            name='cardchooser'
+            className={`chooser-${NO_ICON}`}
+            id={NO_ICON}
+            value={NO_ICON}
+            radioGroup='cardtypechooser'
+            checked={cardType === NO_ICON}
+            onChange={handleCardTypesChooser}
+          />
+          <NoIcon />
+        </label>
         <label htmlFor={BATTERY}>
           <input
             type='radio'

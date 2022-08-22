@@ -18,7 +18,7 @@ export const generateNewBoard = (): ICard[] => {
       cardType: ARRAY_OF_CARD_TYPES[getRandomCardType()],
       countItem: getCountItem(),
       cardColor: ARRAY_OF_CARD_COLORS[getRandomColor()],
-      cardOpen: true,
+      cardOpen: false,
     };
 
     newField.push(newCard);

@@ -11,6 +11,10 @@ $colors: (
   pink: #e03997,
 );
 
+.colorchooser {
+  margin: 1rem;
+}
+
 input[type="radio"] {
   display: none;
   &:checked + label {

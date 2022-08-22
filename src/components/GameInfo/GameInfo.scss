@@ -1,3 +1,11 @@
-.gameinfo{
+.gameinfo {
   border: 1px dotted green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gcspan {
+  font-size: 1.1rem;
+  padding: 0.2rem;
 }

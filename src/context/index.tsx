@@ -8,7 +8,7 @@ import {
   cardsReducer,
 } from "./gameReducer";
 
-const initialState = {
+const initialGameCTX: IGameContext = {
   cards: [],
   userChooseCard: {
     id: 0,
@@ -25,10 +25,10 @@ const initialState = {
 };
 
 export const GameContext = createContext<{
-  state: IGameContext;
+  gameCTX: IGameContext;
   dispatch: Dispatch<TGameActions>;
 }>({
-  state: initialState,
+  gameCTX: initialGameCTX,
   dispatch: () => null,
 });
 
@@ -54,10 +54,10 @@ const mainReducer = (
 });
 
 export const GameProvider: React.FC<any> = ({ children }) => {
-  const [state, dispatch] = useReducer(mainReducer, initialState);
+  const [gameCTX, dispatch] = useReducer(mainReducer, initialGameCTX);
 
   return (
-    <GameContext.Provider value={{ state, dispatch }}>
+    <GameContext.Provider value={{ gameCTX, dispatch }}>
       {children}
     </GameContext.Provider>
   );

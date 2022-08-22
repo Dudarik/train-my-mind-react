@@ -5,9 +5,9 @@ import { actionChooseCardTypes } from "../context/gameReducer";
 import "./CountCardItemsChooser.scss";
 
 const CountCardItemsChooser = () => {
-  const { state, dispatch } = useContext(GameContext);
+  const { gameCTX, dispatch } = useContext(GameContext);
 
-  const { countItem } = state.userChooseCard;
+  const { countItem } = gameCTX.userChooseCard;
 
   const handlerCountCardItemsChooser = (
     event: React.ChangeEvent<HTMLInputElement>

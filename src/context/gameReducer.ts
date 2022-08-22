@@ -13,6 +13,8 @@ type ActionMap<M extends { [index: string]: any }> = {
 
 export enum actionGameTypes {
   loadCards = "LOAD_CARDS",
+  openCard = "OPEN_CARD",
+  closeCard = "CLOSE_CARD",
   setTargetCardId = "SET_TARGET_CARD_ID",
   setScore = "SET_SCORE",
   setTryCount = "SET_TRY_COUNT",
@@ -42,6 +44,8 @@ type ChooseCardPayload = {
 
 type CardsPayload = {
   [actionGameTypes.loadCards]: ICard[];
+  [actionGameTypes.openCard]: number;
+  [actionGameTypes.closeCard]: number;
 };
 
 export type TGameActions = GameActions | CardsActions | ChooseCardActions; //| ChooseCardActions | CardsActions;
@@ -61,6 +65,19 @@ export const cardsReducer = (
   switch (type) {
     case actionGameTypes.loadCards:
       return payload;
+
+    case actionGameTypes.openCard:
+      return [
+        ...state.map((card) =>
+          card.id === payload ? { ...card, cardOpen: true } : card
+        ),
+      ];
+    case actionGameTypes.closeCard:
+      return [
+        ...state.map((card) =>
+          card.id === payload ? { ...card, cardOpen: false } : card
+        ),
+      ];
 
     default:
       return state;
