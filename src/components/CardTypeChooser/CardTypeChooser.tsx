@@ -1,33 +1,33 @@
-import React from "react";
+import { useContext } from "react";
 import { BATTERY, GEAR, LAMP, TOOL } from "../../const";
+import { GameContext } from "../../context";
+import { actionChooseCardTypes } from "../../context/gameReducer";
 import Battery from "../Battery/Battery";
 import Gear from "../Gear/Gear";
 import Lamp from "../Lamp/Lamp";
 import Tool from "../Tool/Tool";
 import "./CardTypeChooser.scss";
 
-type Props = {
-  cardType: string;
-  cardColor: string;
-};
-
-const CardTypesChooser: React.FC<Props> = (props: Props) => {
-  const { cardType, cardColor } = props;
+const CardTypesChooser: React.FC = () => {
+  const { state, dispatch } = useContext(GameContext);
+  const { cardType, cardColor } = state.userChooseCard;
 
   const handleCardTypesChooser = (
-    event: React.FormEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>
   ): void => {
-    
+    dispatch({
+      type: actionChooseCardTypes.changeUCSCardType,
+      payload: event.target.value,
+    });
   };
 
-  // console.log(cardType, cardColor);
   return (
     <div className='chooser-container'>
       <form className='chooser-form'>
         <label htmlFor={BATTERY}>
           <input
             type='radio'
-            name='rating'
+            name='cardchooser'
             className={`chooser-${BATTERY}`}
             id={BATTERY}
             value={BATTERY}
@@ -41,7 +41,7 @@ const CardTypesChooser: React.FC<Props> = (props: Props) => {
         <label htmlFor={GEAR}>
           <input
             type='radio'
-            name='rating'
+            name='cardchooser'
             className={`chooser-${GEAR}`}
             id={GEAR}
             value={GEAR}
@@ -55,7 +55,7 @@ const CardTypesChooser: React.FC<Props> = (props: Props) => {
         <label htmlFor={LAMP}>
           <input
             type='radio'
-            name='rating'
+            name='cardchooser'
             className={`chooser-${LAMP}`}
             id={LAMP}
             value={LAMP}
@@ -69,7 +69,7 @@ const CardTypesChooser: React.FC<Props> = (props: Props) => {
         <label htmlFor={TOOL}>
           <input
             type='radio'
-            name='rating'
+            name='cardchooser'
             className={`chooser-${TOOL}`}
             id={TOOL}
             value={TOOL}

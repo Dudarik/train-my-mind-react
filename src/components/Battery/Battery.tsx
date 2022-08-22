@@ -6,6 +6,8 @@ type Props = {
 
 const Battery = (props: Props) => {
   const { color } = props;
+  // console.log(color);
+  // console.log(color);
   return (
     <svg
       // width={32}
@@ -13,7 +15,7 @@ const Battery = (props: Props) => {
       width='85%'
       height='85%'
       viewBox='0 0 512 512'
-      fill={color}
+      fill={color ? color : "#fff"}
       xmlns='http://www.w3.org/2000/svg'
       {...props}>
       <title>{"ionicons-v5-d"}</title>
