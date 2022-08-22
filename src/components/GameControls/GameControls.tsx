@@ -14,7 +14,7 @@ const GameControls: React.FC = () => {
 
   return (
     <div className='gamecontrols'>
-      <Card {...userChooseCard} />
+      <Card card={userChooseCard} />
       <CardTypeChooser />
       <ColorChooser />
       <CountCardItemsChooser />

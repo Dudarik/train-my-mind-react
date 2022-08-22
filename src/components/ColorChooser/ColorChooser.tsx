@@ -4,6 +4,7 @@ import {
   CARD_ITEMS_COLOR_GREEN,
   CARD_ITEMS_COLOR_RED,
   CARD_ITEMS_COLOR_YELLOW,
+  CARD_ITEMS_NO_COLOR,
 } from "../../const";
 import { GameContext } from "../../context";
 import { actionChooseCardTypes } from "../../context/gameReducer";
@@ -25,6 +26,17 @@ const ColorChooser = () => {
 
   return (
     <div className='colorchooser'>
+      <input
+        type='radio'
+        name='color'
+        id='nocolor'
+        checked={cardColor === CARD_ITEMS_NO_COLOR}
+        value={CARD_ITEMS_NO_COLOR}
+        onChange={handlerCardColorChooser}
+      />
+      <label htmlFor='nocolor'>
+        <span className='nocolor'></span>
+      </label>
       <input
         type='radio'
         name='color'

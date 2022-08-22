@@ -6,12 +6,20 @@ import { ICardItem } from "../../interfaces/ICardItem";
 import CardItem from "../CardItem/CardItem";
 import "./Card.scss";
 
-const Card: React.FC<ICard> = (props) => {
-  const { cardOpen } = props;
-  const cardItems: ICardItem[] = generateNewCard(props);
+type Props = {
+  card: ICard;
+  targetCardID?: number;
+};
+const Card: React.FC<Props> = (props) => {
+  const { cardOpen, id } = props.card;
+
+  const cardItems: ICardItem[] = generateNewCard(props.card);
 
   return (
-    <div className={`card ${cardOpen && "cardopen"}`}>
+    <div
+      className={`card ${cardOpen && "cardopen"} ${
+        id === props.targetCardID ? "target-card" : null
+      }`}>
       <div className='front'></div>
       <div className='back'>
         {cardItems.map((cardItem) => (

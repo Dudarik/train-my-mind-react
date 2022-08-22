@@ -17,7 +17,7 @@ const initialGameCTX: IGameContext = {
     cardColor: CARD_ITEMS_COLOR_GREEN,
     cardOpen: true,
   },
-  targetCardID: 0,
+  targetCardID: -1,
   round: 1,
   score: 0,
   tryCount: 0,

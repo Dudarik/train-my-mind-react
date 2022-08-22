@@ -36,7 +36,7 @@ const CardTypesChooser: React.FC = () => {
             checked={cardType === NO_ICON}
             onChange={handleCardTypesChooser}
           />
-          <NoIcon />
+          <NoIcon color={cardColor} />
         </label>
         <label htmlFor={BATTERY}>
           <input

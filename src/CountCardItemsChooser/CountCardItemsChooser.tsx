@@ -21,6 +21,17 @@ const CountCardItemsChooser = () => {
     <div className='form_radio_group'>
       <div className='form_radio_group-item'>
         <input
+          id='radio-0'
+          type='radio'
+          name='radio'
+          value='0'
+          checked={countItem === 0}
+          onChange={handlerCountCardItemsChooser}
+        />
+        <label htmlFor='radio-0'>0</label>
+      </div>
+      <div className='form_radio_group-item'>
+        <input
           id='radio-1'
           type='radio'
           name='radio'

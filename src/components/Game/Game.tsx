@@ -20,7 +20,6 @@ const Game: React.FC = () => {
   for (let i = 0; i < COUNT_CARDS; i++) {
     closeCards.push(i);
   }
-
   // useOpenBoard();
 
   useEffect(() => {
@@ -37,6 +36,10 @@ const Game: React.FC = () => {
         for (let i = 0; i < COUNT_CARDS; i++) {
           dispatch({ type: actionGameTypes.closeCard, payload: i });
         }
+
+        setTimeout(() => {
+          dispatch({ type: actionGameTypes.setTargetCardId, payload: 2 });
+        }, 1000);
       }, 1000 * 5);
     }, 1000);
   }, [dispatch]);
