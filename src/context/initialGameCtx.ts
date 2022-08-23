@@ -3,6 +3,7 @@ import { IGameContext } from "../interfaces/IGameContext";
 
 export const initialGameCtx: IGameContext = {
   cards: [],
+  closeCards: [],
   userChooseCard: {
     id: 0,
     countItem: 1,

@@ -5,7 +5,7 @@ import { TGameActions } from "../types";
 export const cardsReducer = (
   state: ICard[],
   { type, payload }: TGameActions
-) => {
+): ICard[] => {
   switch (type) {
     case actionGameTypes.loadCards:
       return payload;

@@ -3,6 +3,9 @@ import { ActionMap } from "./ActionMap";
 import { actionChooseCardTypes, actionGameTypes } from "./enums";
 
 export type GamePayload = {
+  [actionGameTypes.setCloseCards]: number[];
+  [actionGameTypes.removeFromCloseCards]: number;
+
   [actionGameTypes.setTargetCardId]: number;
   [actionGameTypes.resetTargetCardId]: void;
 

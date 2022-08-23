@@ -5,6 +5,7 @@ import { GameContext } from "../../context";
 import { actionGameTypes } from "../../context/enums";
 
 import { generateNewBoard } from "../../helpers/generateNewBoard";
+import { getRandomCloseCardId } from "../../helpers/randomGenerator";
 
 import Board from "../Board/Board";
 import GameControls from "../GameControls/GameControls";
@@ -15,15 +16,11 @@ import "./Game.scss";
 const Game: React.FC = () => {
   const { dispatch } = useContext(GameContext);
 
-  const closeCards: Array<number> = [];
-
-  for (let i = 0; i < COUNT_CARDS; i++) {
-    closeCards.push(i);
-  }
-  // useOpenBoard();
-
   useEffect(() => {
-    dispatch({ type: actionGameTypes.loadCards, payload: generateNewBoard() });
+    const [cards, closeCards] = generateNewBoard();
+
+    dispatch({ type: actionGameTypes.loadCards, payload: cards });
+    dispatch({ type: actionGameTypes.setCloseCards, payload: closeCards });
     setTimeout(() => {
       let i = 0;
 
@@ -38,9 +35,12 @@ const Game: React.FC = () => {
         }
 
         setTimeout(() => {
-          dispatch({ type: actionGameTypes.setTargetCardId, payload: 2 });
+          dispatch({
+            type: actionGameTypes.setTargetCardId,
+            payload: getRandomCloseCardId(closeCards),
+          });
         }, 1000);
-      }, 1000 * 5);
+      }, 1000 * 10);
     }, 1000);
   }, [dispatch]);
   return (

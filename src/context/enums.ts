@@ -3,6 +3,9 @@ export enum actionGameTypes {
   openCard = "OPEN_CARD",
   closeCard = "CLOSE_CARD",
 
+  setCloseCards = "SET_CLOSE_CARDS",
+  removeFromCloseCards = "REMOVE_FROM_CLOSE_CARDS",
+
   setTargetCardId = "SET_TARGET_CARD_ID",
   resetTargetCardId = "RESET_TARGET_CARD_ID",
 
