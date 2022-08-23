@@ -1,10 +1,9 @@
 import { useContext } from "react";
 import { GameContext } from "../context";
-import { actionGameTypes } from "../context/gameReducer";
 
 export const useOpenBoard = () => {
   const {
-    gameCTX: { cards },
+    gameCtx: { cards },
     dispatch,
   } = useContext(GameContext);
 

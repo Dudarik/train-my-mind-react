@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { COUNT_CARDS } from "../../const";
 
 import { GameContext } from "../../context";
-import { actionGameTypes } from "../../context/gameReducer";
+import { actionGameTypes } from "../../context/enums";
 
 import { generateNewBoard } from "../../helpers/generateNewBoard";
 

@@ -1,15 +1,5 @@
 import { ICard } from "../interfaces/ICard";
-
-type ActionMap<M extends { [index: string]: any }> = {
-  [Key in keyof M]: M[Key] extends undefined
-    ? {
-        type: Key;
-      }
-    : {
-        type: Key;
-        payload: M[Key];
-      };
-};
+import { ActionMap } from "./ActionMap";
 
 export enum actionGameTypes {
   loadCards = "LOAD_CARDS",
@@ -48,7 +38,7 @@ type CardsPayload = {
   [actionGameTypes.closeCard]: number;
 };
 
-export type TGameActions = GameActions | CardsActions | ChooseCardActions; //| ChooseCardActions | CardsActions;
+export type TGameActions = GameActions | CardsActions | ChooseCardActions;
 
 export type GameActions = ActionMap<GamePayload>[keyof ActionMap<GamePayload>];
 

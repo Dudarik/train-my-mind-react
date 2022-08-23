@@ -8,9 +8,9 @@ import "./Board.scss";
 import { GameContext } from "../../context";
 
 const Board: React.FC = () => {
-  const { gameCTX } = useContext(GameContext);
-  const { cards } = gameCTX;
-  const targetCardID = gameCTX.targetCardID;
+  const { gameCtx } = useContext(GameContext);
+  const { cards } = gameCtx;
+  const targetCardID = gameCtx.targetCardID;
 
   return (
     <div className='board'>

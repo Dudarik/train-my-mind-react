@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { BATTERY, GEAR, LAMP, NO_ICON, TOOL } from "../../const";
 import { GameContext } from "../../context";
-import { actionChooseCardTypes } from "../../context/gameReducer";
+import { actionChooseCardTypes } from "../../context/enums";
+
 import Battery from "../Battery/Battery";
 import Gear from "../Gear/Gear";
 import Lamp from "../Lamp/Lamp";
@@ -10,8 +11,8 @@ import Tool from "../Tool/Tool";
 import "./CardTypeChooser.scss";
 
 const CardTypesChooser: React.FC = () => {
-  const { gameCTX, dispatch } = useContext(GameContext);
-  const { cardType, cardColor } = gameCTX.userChooseCard;
+  const { gameCtx, dispatch } = useContext(GameContext);
+  const { cardType, cardColor } = gameCtx.userChooseCard;
 
   const handleCardTypesChooser = (
     event: React.ChangeEvent<HTMLInputElement>

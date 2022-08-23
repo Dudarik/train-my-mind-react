@@ -7,13 +7,13 @@ import {
   CARD_ITEMS_NO_COLOR,
 } from "../../const";
 import { GameContext } from "../../context";
-import { actionChooseCardTypes } from "../../context/gameReducer";
+import { actionChooseCardTypes } from "../../context/enums";
 
 import "./ColorChooser.scss";
 
 const ColorChooser = () => {
-  const { gameCTX, dispatch } = useContext(GameContext);
-  const { cardColor } = gameCTX.userChooseCard;
+  const { gameCtx, dispatch } = useContext(GameContext);
+  const { cardColor } = gameCtx.userChooseCard;
 
   const handlerCardColorChooser = (
     event: React.ChangeEvent<HTMLInputElement>

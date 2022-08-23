@@ -9,7 +9,7 @@ import CountCardItemsChooser from "../../CountCardItemsChooser/CountCardItemsCho
 
 const GameControls: React.FC = () => {
   const {
-    gameCTX: { userChooseCard },
+    gameCtx: { userChooseCard },
   } = useContext(GameContext);
 
   return (

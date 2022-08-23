@@ -1,63 +1,24 @@
 import { createContext, Dispatch, useReducer } from "react";
-import { CARD_ITEMS_COLOR_GREEN, LAMP } from "../const";
-import { IGameContext } from "../interfaces/IGameContext";
-import {
-  gameReducer,
-  chooseCardReducer,
-  TGameActions,
-  cardsReducer,
-} from "./gameReducer";
 
-const initialGameCTX: IGameContext = {
-  cards: [],
-  userChooseCard: {
-    id: 0,
-    countItem: 1,
-    cardType: LAMP,
-    cardColor: CARD_ITEMS_COLOR_GREEN,
-    cardOpen: true,
-  },
-  targetCardID: -1,
-  round: 1,
-  score: 0,
-  tryCount: 0,
-  bestScore: 0,
-};
+import { IGameContext } from "../interfaces/IGameContext";
+import { initialGameCtx } from "./initialGameCtx";
+
+import { mainReducer } from "./mainReducer";
+import { TGameActions } from "./types";
 
 export const GameContext = createContext<{
-  gameCTX: IGameContext;
+  gameCtx: IGameContext;
   dispatch: Dispatch<TGameActions>;
 }>({
-  gameCTX: initialGameCTX,
+  gameCtx: initialGameCtx,
   dispatch: () => null,
 });
 
-const mainReducer = (
-  {
-    cards,
-    userChooseCard,
-    targetCardID,
-    score,
-    tryCount,
-    round,
-    bestScore,
-  }: IGameContext,
-  action: TGameActions
-) => ({
-  cards: cardsReducer(cards, action),
-  targetCardID: gameReducer(targetCardID, action),
-  userChooseCard: chooseCardReducer(userChooseCard, action),
-  score: gameReducer(score, action),
-  tryCount: gameReducer(tryCount, action),
-  round: gameReducer(round, action),
-  bestScore: gameReducer(bestScore, action),
-});
-
 export const GameProvider: React.FC<any> = ({ children }) => {
-  const [gameCTX, dispatch] = useReducer(mainReducer, initialGameCTX);
+  const [gameCtx, dispatch] = useReducer(mainReducer, initialGameCtx);
 
   return (
-    <GameContext.Provider value={{ gameCTX, dispatch }}>
+    <GameContext.Provider value={{ gameCtx, dispatch }}>
       {children}
     </GameContext.Provider>
   );
