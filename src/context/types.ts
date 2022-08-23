@@ -4,7 +4,11 @@ import { actionChooseCardTypes, actionGameTypes } from "./enums";
 
 export type GamePayload = {
   [actionGameTypes.setTargetCardId]: number;
+  [actionGameTypes.resetTargetCardId]: void;
+
   [actionGameTypes.setScore]: number;
+  [actionGameTypes.resetScore]: void;
+
   [actionGameTypes.setTryCount]: number;
   [actionGameTypes.setRound]: number;
   [actionGameTypes.setBestScore]: number;

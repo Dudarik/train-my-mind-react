@@ -2,10 +2,17 @@ export enum actionGameTypes {
   loadCards = "LOAD_CARDS",
   openCard = "OPEN_CARD",
   closeCard = "CLOSE_CARD",
+
   setTargetCardId = "SET_TARGET_CARD_ID",
+  resetTargetCardId = "RESET_TARGET_CARD_ID",
+
   setScore = "SET_SCORE",
+  resetScore = "RESET_SCORE",
+
   setTryCount = "SET_TRY_COUNT",
+
   setRound = "SET_ROUND",
+
   setBestScore = "SET_BEST_SCORE",
 }
 

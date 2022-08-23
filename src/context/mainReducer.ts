@@ -1,8 +1,12 @@
 import { IGameContext } from "../interfaces/IGameContext";
+import { bestScoreReducer } from "./reducers/bestScoreReducer";
 import { cardsReducer } from "./reducers/cardsReducer";
 import { chooseCardReducer } from "./reducers/chooseCardReducer";
+import { roundReducer } from "./reducers/roundReducer";
+import { scroreReducer } from "./reducers/scoreReducer";
 
-import { gameReducer } from "./reducers/gameReducer";
+import { targetCardReducer } from "./reducers/targetCardReducer";
+import { tryCountReducer } from "./reducers/tryCountReducer";
 import { TGameActions } from "./types";
 
 export const mainReducer = (
@@ -18,10 +22,10 @@ export const mainReducer = (
   action: TGameActions
 ) => ({
   cards: cardsReducer(cards, action),
-  targetCardID: gameReducer(targetCardID, action),
+  targetCardID: targetCardReducer(targetCardID, action),
   userChooseCard: chooseCardReducer(userChooseCard, action),
-  score: gameReducer(score, action),
-  tryCount: gameReducer(tryCount, action),
-  round: gameReducer(round, action),
-  bestScore: gameReducer(bestScore, action),
+  score: scroreReducer(score, action),
+  tryCount: tryCountReducer(tryCount, action),
+  round: roundReducer(round, action),
+  bestScore: bestScoreReducer(bestScore, action),
 });
