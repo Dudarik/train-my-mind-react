@@ -40,7 +40,7 @@ const Game: React.FC = () => {
             payload: getRandomCloseCardId(closeCards),
           });
         }, 1000);
-      }, 1000 * 10);
+      }, 1000 * 30);
     }, 1000);
   }, [dispatch]);
   return (
