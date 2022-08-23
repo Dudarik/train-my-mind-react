@@ -1,8 +1,8 @@
 import { IGameContext } from "../interfaces/IGameContext";
-import { cardsReducer } from "./cardsReducer";
-import { chooseCardReducer } from "./chooseCardReducer";
+import { cardsReducer } from "./reducers/cardsReducer";
+import { chooseCardReducer } from "./reducers/chooseCardReducer";
 
-import { gameReducer } from "./gameReducer";
+import { gameReducer } from "./reducers/gameReducer";
 import { TGameActions } from "./types";
 
 export const mainReducer = (

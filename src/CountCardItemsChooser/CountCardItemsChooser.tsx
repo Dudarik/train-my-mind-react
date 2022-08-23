@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { GameContext } from "../context";
-import { actionChooseCardTypes } from "../context/gameReducer";
+import { actionChooseCardTypes } from "../context/enums";
 
 import "./CountCardItemsChooser.scss";
 

@@ -1,6 +1,6 @@
-import { ICard } from "../interfaces/ICard";
-import { actionGameTypes } from "./enums";
-import { TGameActions } from "./types";
+import { ICard } from "../../interfaces/ICard";
+import { actionGameTypes } from "../enums";
+import { TGameActions } from "../types";
 
 export const cardsReducer = (
   state: ICard[],
