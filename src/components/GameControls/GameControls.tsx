@@ -23,6 +23,7 @@ const GameControls: React.FC = () => {
         type: actionGameTypes.setTargetCardId,
         payload: getRandomCloseCardId(closeCards),
       });
+    //eslint-disable-next-line
   }, [cards, dispatch]);
 
   const handleCheckAnswer = (): void => {
