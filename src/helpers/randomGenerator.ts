@@ -7,5 +7,6 @@ export const getRandomCardType = (): number => getRandomNumber(0, 3);
 
 export const getCountItem = (): number => getRandomNumber(1, 4);
 
-export const getRandomCloseCardId = (closeCardsArr: number[]): number =>
-  closeCardsArr[getRandomNumber(0, closeCardsArr.length - 1)];
+export const getRandomCloseCardId = (closeCardsArr: number[]): number => {
+  return closeCardsArr[getRandomNumber(0, closeCardsArr.length - 1)];
+};

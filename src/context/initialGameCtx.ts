@@ -12,7 +12,7 @@ export const initialGameCtx: IGameContext = {
     cardOpen: true,
   },
   targetCardID: -1,
-  round: 1,
+  round: 0,
   score: 0,
   tryCount: 0,
   bestScore: 0,

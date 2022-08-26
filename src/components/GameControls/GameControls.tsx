@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { GameContext } from "../../context";
 import Card from "../Card/Card";
 
@@ -13,9 +13,17 @@ import { NO_ICON } from "../../const";
 
 const GameControls: React.FC = () => {
   const {
-    gameCtx: { userChooseCard, cards, targetCardID, score, closeCards },
+    gameCtx: { userChooseCard, cards, targetCardID, score, closeCards, round },
     dispatch,
   } = useContext(GameContext);
+
+  useEffect(() => {
+    if (round !== 0)
+      dispatch({
+        type: actionGameTypes.setTargetCardId,
+        payload: getRandomCloseCardId(closeCards),
+      });
+  }, [cards, closeCards, dispatch]);
 
   const handleCheckAnswer = (): void => {
     const result = checkAnswer(
@@ -34,16 +42,15 @@ const GameControls: React.FC = () => {
         userChooseCard.countItem !== 0 ? userChooseCard.countItem : undefined,
       ]
     );
-    dispatch({ type: actionGameTypes.openCard, payload: targetCardID });
-    dispatch({ type: actionGameTypes.setScore, payload: score + result });
+
     dispatch({
       type: actionGameTypes.removeFromCloseCards,
       payload: targetCardID,
     });
-    dispatch({
-      type: actionGameTypes.setTargetCardId,
-      payload: getRandomCloseCardId(closeCards),
-    });
+
+    dispatch({ type: actionGameTypes.openCard, payload: targetCardID });
+
+    dispatch({ type: actionGameTypes.setScore, payload: score + result });
   };
 
   return (

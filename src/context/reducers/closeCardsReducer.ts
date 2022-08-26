@@ -9,8 +9,9 @@ export const closeCardsReducer = (
     case actionGameTypes.setCloseCards:
       return payload;
 
-    case actionGameTypes.removeFromCloseCards:
+    case actionGameTypes.removeFromCloseCards: {
       return [...state.filter((item) => item !== payload)];
+    }
 
     default:
       return state;

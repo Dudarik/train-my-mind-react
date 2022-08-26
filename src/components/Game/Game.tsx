@@ -39,8 +39,13 @@ const Game: React.FC = () => {
             type: actionGameTypes.setTargetCardId,
             payload: getRandomCloseCardId(closeCards),
           });
+
+          dispatch({
+            type: actionGameTypes.setRound,
+            payload: 1,
+          });
         }, 1000);
-      }, 1000 * 30);
+      }, 1000 * 5);
     }, 1000);
   }, [dispatch]);
   return (
