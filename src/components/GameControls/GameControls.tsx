@@ -23,7 +23,7 @@ const GameControls: React.FC = () => {
         type: actionGameTypes.setTargetCardId,
         payload: getRandomCloseCardId(closeCards),
       });
-  }, [cards, closeCards, dispatch]);
+  }, [cards, dispatch]);
 
   const handleCheckAnswer = (): void => {
     const result = checkAnswer(
