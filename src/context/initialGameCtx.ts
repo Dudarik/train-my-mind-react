@@ -1,4 +1,5 @@
 import { CARD_ITEMS_COLOR_GREEN, LAMP } from "../const";
+import { getBestScore } from "../helpers/getBestScore";
 import { IGameContext } from "../interfaces/IGameContext";
 
 export const initialGameCtx: IGameContext = {
@@ -16,5 +17,5 @@ export const initialGameCtx: IGameContext = {
   round: 1,
   score: 0,
   tryCount: 0,
-  bestScore: 0,
+  bestScore: getBestScore(),
 };

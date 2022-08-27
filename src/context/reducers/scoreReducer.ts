@@ -8,8 +8,6 @@ export const scroreReducer = (
   switch (type) {
     case actionGameTypes.setScore:
       return payload;
-    case actionGameTypes.resetScore:
-      return 0;
     default:
       return state;
   }

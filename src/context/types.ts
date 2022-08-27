@@ -12,7 +12,7 @@ export type GamePayload = {
   [actionGameTypes.setTargetCardHighligth]: boolean;
 
   [actionGameTypes.setScore]: number;
-  [actionGameTypes.resetScore]: void;
+  [actionGameTypes.resetScore]: number;
 
   [actionGameTypes.setTryCount]: number;
   [actionGameTypes.setRound]: number;

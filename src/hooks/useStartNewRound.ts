@@ -37,8 +37,8 @@ export const useStartNewRound = () => {
           //   //   type: actionGameTypes.setRound,
           //   //   payload: round + 1,
           //   // });
-        }, 1000);
-      }, 1000 * 5);
+        }, 500);
+      }, 1000 * 60);
     }, 1000);
     //eslint-disable-next-line
   }, [round]);

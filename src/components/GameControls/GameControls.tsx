@@ -21,6 +21,7 @@ const GameControls: React.FC = () => {
       score,
       closeCards,
       round,
+      bestScore,
     },
     dispatch,
   } = useContext(GameContext);
@@ -42,6 +43,17 @@ const GameControls: React.FC = () => {
       });
     } //eslint-disable-next-line
   }, [targetCardHightlight, cards, dispatch]);
+
+  const handleNewGame = (): void => {
+    if (round === 3 && closeCards.length === 3) {
+      if (bestScore < score) {
+        dispatch({ type: actionGameTypes.setBestScore, payload: score });
+        localStorage.setItem("bestscore", bestScore.toString());
+      }
+      dispatch({ type: actionGameTypes.setScore, payload: 0 });
+      dispatch({ type: actionGameTypes.setRound, payload: 1 });
+    }
+  };
 
   const handleNextRound = (): void => {
     if (round < 3) {
@@ -99,7 +111,9 @@ const GameControls: React.FC = () => {
           next round
         </button>
       ) : (
-        <button className='checkbutton'>NEW game</button>
+        <button className='checkbutton' onClick={handleNewGame}>
+          NEW game
+        </button>
       )}
 
       <CardTypeChooser />
