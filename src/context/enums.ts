@@ -9,6 +9,8 @@ export enum actionGameTypes {
   setTargetCardId = "SET_TARGET_CARD_ID",
   resetTargetCardId = "RESET_TARGET_CARD_ID",
 
+  setTargetCardHighligth = "SET_TARGET_CARD_HIGHLIGHT",
+
   setScore = "SET_SCORE",
   resetScore = "RESET_SCORE",
 

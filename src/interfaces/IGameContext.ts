@@ -5,6 +5,7 @@ export interface IGameContext {
   closeCards: number[];
   userChooseCard: ICard;
   targetCardID: number;
+  targetCardHightlight: boolean;
   round: number;
   tryCount: number;
   score: number;

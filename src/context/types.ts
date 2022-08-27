@@ -9,6 +9,8 @@ export type GamePayload = {
   [actionGameTypes.setTargetCardId]: number;
   [actionGameTypes.resetTargetCardId]: void;
 
+  [actionGameTypes.setTargetCardHighligth]: boolean;
+
   [actionGameTypes.setScore]: number;
   [actionGameTypes.resetScore]: void;
 

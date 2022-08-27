@@ -11,7 +11,7 @@ const GameInfo = () => {
     <div className='gameinfo'>
       <span className='gcspan'>score: {score}</span>
       <span className='gcspan'>bestScore: {bestScore}</span>
-      <span className='gcspan'>tryCount: {tryCount}</span>
+      {/* <span className='gcspan'>tryCount: {tryCount}</span> */}
       <span className='gcspan'>round: {round}</span>
     </div>
   );

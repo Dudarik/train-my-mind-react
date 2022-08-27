@@ -13,20 +13,53 @@ import { NO_ICON } from "../../const";
 
 const GameControls: React.FC = () => {
   const {
-    gameCtx: { userChooseCard, cards, targetCardID, score, closeCards, round },
+    gameCtx: {
+      userChooseCard,
+      cards,
+      targetCardID,
+      targetCardHightlight,
+      score,
+      closeCards,
+      round,
+    },
     dispatch,
   } = useContext(GameContext);
 
   useEffect(() => {
-    if (round !== 0)
+    if (targetCardHightlight && closeCards.length > 3) {
       dispatch({
         type: actionGameTypes.setTargetCardId,
         payload: getRandomCloseCardId(closeCards),
       });
-    //eslint-disable-next-line
-  }, [cards, dispatch]);
+    } else {
+      dispatch({
+        type: actionGameTypes.setTargetCardHighligth,
+        payload: false,
+      });
+      dispatch({
+        type: actionGameTypes.setTargetCardId,
+        payload: -1,
+      });
+    } //eslint-disable-next-line
+  }, [targetCardHightlight, cards, dispatch]);
+
+  const handleNextRound = (): void => {
+    if (round < 3) {
+      dispatch({ type: actionGameTypes.setRound, payload: round + 1 });
+    }
+  };
 
   const handleCheckAnswer = (): void => {
+    if (closeCards.length === 3) {
+      dispatch({
+        type: actionGameTypes.setTargetCardHighligth,
+        payload: false,
+      });
+      console.log(`Round ${round} the end!`);
+
+      return;
+    }
+
     const result = checkAnswer(
       [
         cards[targetCardID].cardType,
@@ -57,9 +90,18 @@ const GameControls: React.FC = () => {
   return (
     <div className='gamecontrols'>
       <Card card={userChooseCard} />
-      <button className='checkbutton' onClick={handleCheckAnswer}>
-        check
-      </button>
+      {closeCards.length > 3 ? (
+        <button className='checkbutton' onClick={handleCheckAnswer}>
+          Check
+        </button>
+      ) : round < 3 ? (
+        <button className='checkbutton' onClick={handleNextRound}>
+          next round
+        </button>
+      ) : (
+        <button className='checkbutton'>NEW game</button>
+      )}
+
       <CardTypeChooser />
       <ColorChooser />
       <CountCardItemsChooser />
