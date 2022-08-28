@@ -47,8 +47,8 @@ const GameControls: React.FC = () => {
   const handleNewGame = (): void => {
     if (round === 3 && closeCards.length === 3) {
       if (bestScore < score) {
+        localStorage.setItem("bestscore", score.toString());
         dispatch({ type: actionGameTypes.setBestScore, payload: score });
-        localStorage.setItem("bestscore", bestScore.toString());
       }
       dispatch({ type: actionGameTypes.setScore, payload: 0 });
       dispatch({ type: actionGameTypes.setRound, payload: 1 });
