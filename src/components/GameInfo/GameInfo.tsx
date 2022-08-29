@@ -4,7 +4,7 @@ import "./GameInfo.scss";
 
 const GameInfo = () => {
   const {
-    gameCtx: { score, bestScore, tryCount, round },
+    gameCtx: { score, bestScore, round },
   } = useContext(GameContext);
 
   return (

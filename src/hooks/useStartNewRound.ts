@@ -38,7 +38,7 @@ export const useStartNewRound = () => {
           //   //   payload: round + 1,
           //   // });
         }, 500);
-      }, 1000 * 60);
+      }, 1000 * 2);
     }, 1000);
     //eslint-disable-next-line
   }, [round]);

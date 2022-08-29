@@ -1,12 +1,8 @@
 .card {
-  // border: 1px dotted green;
-
-  padding: 0.1rem;
-
-  margin: 0.15rem;
-
   width: 5rem;
   height: 5rem;
+
+  margin: 0.3rem;
 
   &.cardopen {
     .front {
@@ -58,18 +54,18 @@
 @keyframes glowing {
   0% {
     background-color: #2ba805;
-    box-shadow: 0 0 1px #2ba805;
+    box-shadow: 0 0 5px 3px #2ba805;
   }
-  25% {
+  20% {
     background-color: #49e819;
-    box-shadow: 0 0 30px #49e819;
+    box-shadow: 0 0 25px 3px #49e819;
   }
-  50% {
+  40% {
     background-color: #2ba805;
-    box-shadow: 0 0 1px #2ba805;
+    box-shadow: 0 0 5px 3px #2ba805;
   }
   100% {
     background-color: #2ba805;
-    box-shadow: 0 0 1px #2ba805;
+    box-shadow: 0 0 5px 3px #2ba805;
   }
 }

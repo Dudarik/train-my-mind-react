@@ -11,7 +11,6 @@ const Game: React.FC = () => {
 
   return (
     <div className='game'>
-      <h1>Game</h1>
       <GameInfo />
       <Board />
       <GameControls />

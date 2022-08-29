@@ -1,15 +1,17 @@
 import { useContext, useEffect } from "react";
 import { GameContext } from "../../context";
-import Card from "../Card/Card";
 
-import "./GameControls.scss";
+import Card from "../Card/Card";
 import CardTypeChooser from "../CardTypeChooser/CardTypeChooser";
 import ColorChooser from "../ColorChooser/ColorChooser";
 import CountCardItemsChooser from "../../CountCardItemsChooser/CountCardItemsChooser";
+
 import { checkAnswer } from "../../helpers/checkAnswer";
 import { actionGameTypes } from "../../context/enums";
 import { getRandomCloseCardId } from "../../helpers/randomGenerator";
 import { NO_ICON } from "../../const";
+
+import "./GameControls.scss";
 
 const GameControls: React.FC = () => {
   const {

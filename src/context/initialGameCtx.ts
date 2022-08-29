@@ -6,7 +6,7 @@ export const initialGameCtx: IGameContext = {
   cards: [],
   closeCards: [],
   userChooseCard: {
-    id: 0,
+    id: -1,
     countItem: 1,
     cardType: LAMP,
     cardColor: CARD_ITEMS_COLOR_GREEN,
