@@ -1,21 +1,23 @@
 .toggle_menu {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
 
   position: absolute;
 
-  top: -2.5rem;
+  top: 1rem;
   right: 1rem;
 
   width: 3.5rem;
   height: 3.5rem;
 
   border-radius: 0.5rem;
-  background-color: #fff;
-  box-shadow: 0 10px 20px rgba($color: #000000, $alpha: 0.08);
+  background-color: rgba($color: #000000, $alpha: 0.2);
+  // box-shadow: 0 10px 20px rgba($color: #000000, $alpha: 0.08);
 
   overflow: hidden;
+
+  transition: all 0.5;
 
   cursor: pointer;
 
@@ -69,5 +71,25 @@
 }
 
 .toggle_menu__active {
-  background-color: red;
+  body {
+    overflow: hidden;
+  }
+}
+
+.toggle_menu__overlay {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($color: #000000, $alpha: 0.6);
+}
+
+@media (max-width: 840px) {
+  .toggle_menu {
+    display: flex;
+  }
 }

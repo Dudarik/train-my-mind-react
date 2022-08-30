@@ -10,13 +10,15 @@ const ToggleMenu = () => {
   };
 
   return (
-    <div
-      className={isActive ? "toggle_menu toggle_menu__active" : "toggle_menu"}
-      onClick={handleOnClick}>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <>
+      <div
+        className={isActive ? "toggle_menu toggle_menu__active" : "toggle_menu"}
+        onClick={handleOnClick}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </>
   );
 };
 

@@ -13,17 +13,19 @@ import "./App.css";
 function App() {
   return (
     <>
-      <div className='App'>
-        <Header />
+      <div className='toggle_menu__overlay'>
+        <div className='App'>
+          <Header />
 
-        <Routes>
-          <Route path='/' element={<Homepage />} />
-          <Route path='/rules' element={<Rulespage />} />
-          <Route path='/about' element={<Aboutpage />} />
-          <Route path='*' element={<Notfoundpage />} />
-        </Routes>
+          <Routes>
+            <Route path='/' element={<Homepage />} />
+            <Route path='/rules' element={<Rulespage />} />
+            <Route path='/about' element={<Aboutpage />} />
+            <Route path='*' element={<Notfoundpage />} />
+          </Routes>
 
-        <Footer />
+          <Footer />
+        </div>
       </div>
     </>
   );
