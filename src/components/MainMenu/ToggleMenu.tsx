@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import "./ToggleMenu.scss";
+
 const ToggleMenu = () => {
   const [isActive, setIsActive] = useState(false);
 
