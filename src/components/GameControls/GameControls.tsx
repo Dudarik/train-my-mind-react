@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { GameContext } from "../../context";
 
 import Card from "../Card/Card";
+import CardPoints from "../../CardPoints/CardPoints";
 import CardTypeChooser from "../CardTypeChooser/CardTypeChooser";
 import ColorChooser from "../ColorChooser/ColorChooser";
 import CountCardItemsChooser from "../../CountCardItemsChooser/CountCardItemsChooser";
@@ -27,6 +28,8 @@ const GameControls: React.FC = () => {
     },
     dispatch,
   } = useContext(GameContext);
+
+  let result = 0;
 
   useEffect(() => {
     if (targetCardHightlight && closeCards.length > 3) {
@@ -69,12 +72,12 @@ const GameControls: React.FC = () => {
         type: actionGameTypes.setTargetCardHighligth,
         payload: false,
       });
-      console.log(`Round ${round} the end!`);
+      // console.log(`Round ${round} the end!`);
 
       return;
     }
 
-    const result = checkAnswer(
+    result = checkAnswer(
       [
         cards[targetCardID].cardType,
         cards[targetCardID].cardColor,
@@ -100,10 +103,12 @@ const GameControls: React.FC = () => {
 
     dispatch({ type: actionGameTypes.setScore, payload: score + result });
   };
+  console.log(result);
 
   return (
     <div className='gamecontrols'>
       <Card card={userChooseCard} />
+      <CardPoints points={result} />
       {closeCards.length > 3 ? (
         <button className='checkbutton' onClick={handleCheckAnswer}>
           Check
