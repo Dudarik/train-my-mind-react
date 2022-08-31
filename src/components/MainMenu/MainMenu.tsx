@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import Logo from "../Logo/Logo";
 import "./MainMenu.scss";
+import Menu from "./Menu";
 import ToggleMenu from "./ToggleMenu";
 
 const MainMenu: React.FC = () => {
@@ -16,31 +17,9 @@ const MainMenu: React.FC = () => {
           </div>
         </div>
       </NavLink>
+      <ToggleMenu />
       <div className='menu'>
-        <ToggleMenu />
-        <menu>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? "nav-link nav-link-selected" : "nav-link"
-            }
-            to='/'>
-            Главная
-          </NavLink>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? "nav-link nav-link-selected" : "nav-link"
-            }
-            to='/rules'>
-            Правила
-          </NavLink>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? "nav-link nav-link-selected" : "nav-link"
-            }
-            to='/about'>
-            О приложении
-          </NavLink>
-        </menu>
+        <Menu />
       </div>
     </div>
   );

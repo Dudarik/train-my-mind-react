@@ -1,0 +1,21 @@
+menu {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: space-between;
+  justify-content: center;
+  flex-direction: row;
+
+  .nav-link:hover {
+    background-color: #2ca532ac;
+  }
+
+  .nav-link-selected {
+    background-color: rgba($color: #2f8b3475, $alpha: 0.4);
+  }
+}
+
+@media (max-width: 840px) {
+  menu {
+    flex-direction: column;
+  }
+}

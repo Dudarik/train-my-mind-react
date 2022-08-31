@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Menu from "./Menu";
 
 import "./ToggleMenu.scss";
 
@@ -17,6 +18,11 @@ const ToggleMenu = () => {
         <span></span>
         <span></span>
         <span></span>
+      </div>
+      <div className='toggle_menu__overlay' onClick={() => setIsActive(false)}>
+        <div className='toggle_menu__content'>
+          <Menu />
+        </div>
       </div>
     </>
   );
