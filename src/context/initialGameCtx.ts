@@ -16,6 +16,7 @@ export const initialGameCtx: IGameContext = {
   targetCardHightlight: false,
   round: 1,
   score: 0,
+  points: 0,
   tryCount: 0,
   bestScore: getBestScore(),
 };

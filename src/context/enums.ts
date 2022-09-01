@@ -14,6 +14,8 @@ export enum actionGameTypes {
   setScore = "SET_SCORE",
   resetScore = "RESET_SCORE",
 
+  setPoints = "SET_POINTS",
+
   setTryCount = "SET_TRY_COUNT",
 
   setRound = "SET_ROUND",

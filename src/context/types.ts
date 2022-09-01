@@ -14,6 +14,8 @@ export type GamePayload = {
   [actionGameTypes.setScore]: number;
   [actionGameTypes.resetScore]: number;
 
+  [actionGameTypes.setPoints]: number;
+
   [actionGameTypes.setTryCount]: number;
   [actionGameTypes.setRound]: number;
   [actionGameTypes.setBestScore]: number;

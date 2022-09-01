@@ -13,3 +13,27 @@
 
   position: relative;
 }
+
+.card-points {
+  position: absolute;
+
+  z-index: 1000;
+
+  font-size: 7rem;
+
+  font-weight: bolder;
+  animation: cardpoints 0.7s forwards;
+}
+
+@keyframes cardpoints {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-5rem);
+    opacity: 0;
+  }
+}

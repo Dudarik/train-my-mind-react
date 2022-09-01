@@ -9,5 +9,6 @@ export interface IGameContext {
   round: number;
   tryCount: number;
   score: number;
+  points: number;
   bestScore: number;
 }

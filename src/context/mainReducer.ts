@@ -10,6 +10,7 @@ import { targetCardReducer } from "./reducers/targetCardReducer";
 import { targetCardHighlightReducer } from "./reducers/targetCardHighlightReducer";
 import { tryCountReducer } from "./reducers/tryCountReducer";
 import { TGameActions } from "./types";
+import { pointsReducer } from "./reducers/pointsReducer";
 
 export const mainReducer = (
   {
@@ -19,6 +20,7 @@ export const mainReducer = (
     targetCardID,
     targetCardHightlight,
     score,
+    points,
     tryCount,
     round,
     bestScore,
@@ -34,6 +36,7 @@ export const mainReducer = (
   ),
   userChooseCard: chooseCardReducer(userChooseCard, action),
   score: scroreReducer(score, action),
+  points: pointsReducer(points, action),
   tryCount: tryCountReducer(tryCount, action),
   round: roundReducer(round, action),
   bestScore: bestScoreReducer(bestScore, action),

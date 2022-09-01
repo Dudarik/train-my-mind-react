@@ -5,6 +5,9 @@
   margin: 0.3rem;
 
   &.cardopen {
+    .point-1 {
+      content: "1";
+    }
     .front {
       transform: perspective(600px) rotateY(-180deg);
     }
@@ -21,6 +24,8 @@
 
   overflow: hidden;
   position: absolute;
+
+  z-index: 10;
 
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden; // For Safari
