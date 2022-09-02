@@ -1,3 +1,5 @@
+import "./pagesStyles/Aboutpage.scss";
+
 export const Aboutpage: React.FC = () => {
-  return <div>Aboutpage</div>;
+  return <div className='about-container'>Aboutpage</div>;
 };
