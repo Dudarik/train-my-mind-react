@@ -7,10 +7,8 @@ import CardTypeChooser from "../CardTypeChooser/CardTypeChooser";
 import ColorChooser from "../ColorChooser/ColorChooser";
 import CountCardItemsChooser from "../../CountCardItemsChooser/CountCardItemsChooser";
 
-import { checkAnswer } from "../../helpers/checkAnswer";
 import { actionGameTypes } from "../../context/enums";
 import { getRandomCloseCardId } from "../../helpers/randomGenerator";
-import { NO_ICON } from "../../const";
 
 import "./GameControls.scss";
 import { useHandleGameControls } from "../../hooks/useHandleGameControls";
@@ -20,6 +18,9 @@ const GameControls: React.FC = () => {
 
   const { targetCardHightlight, closeCards, cards, userChooseCard, round } =
     gameCtx;
+
+  const [handleCheckAnswer, handleNextRound, handleNewGame] =
+    useHandleGameControls({ ...gameCtx, dispatch });
 
   useEffect(() => {
     if (targetCardHightlight && closeCards.length > 3) {
@@ -38,9 +39,6 @@ const GameControls: React.FC = () => {
       });
     } //eslint-disable-next-line
   }, [targetCardHightlight, cards, dispatch]);
-
-  const [handleCheckAnswer, handleNextRound, handleNewGame] =
-    useHandleGameControls({ ...gameCtx, dispatch });
 
   return (
     <div className='gamecontrols'>

@@ -23,6 +23,13 @@ const Menu: React.FC = () => {
         className={({ isActive }) =>
           isActive ? "nav-link nav-link-selected" : "nav-link"
         }
+        to='/statistic'>
+        Статистика
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? "nav-link nav-link-selected" : "nav-link"
+        }
         to='/about'>
         О приложении
       </NavLink>

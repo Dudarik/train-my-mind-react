@@ -4,7 +4,7 @@ import { GameContext } from "../context";
 import { actionGameTypes } from "../context/enums";
 import { generateNewBoard } from "../helpers/generateNewBoard";
 
-export const useStartNewRound = () => {
+export const useStartNewRound = (): void => {
   const {
     gameCtx: { round },
     dispatch,

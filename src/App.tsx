@@ -9,6 +9,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 
 import "./App.css";
+import { Statisticpage } from "./pages/Statisticpage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/' element={<Homepage />} />
           <Route path='/rules' element={<Rulespage />} />
           <Route path='/about' element={<Aboutpage />} />
+          <Route path='/statistic' element={<Statisticpage />} />
           <Route path='*' element={<Notfoundpage />} />
         </Routes>
 

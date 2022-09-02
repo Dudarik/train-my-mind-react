@@ -115,14 +115,14 @@
   }
 }
 
-@media (min-width: 839px) {
+@media (min-width: 999px) {
   .toggle_menu__overlay {
     opacity: 0 !important;
     transform: translateY(-1000rem);
   }
 }
 
-@media (max-width: 840px) {
+@media (max-width: 1000px) {
   .toggle_menu {
     display: flex;
   }
