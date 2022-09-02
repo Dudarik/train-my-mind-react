@@ -19,6 +19,7 @@ function App() {
 
         <Routes>
           <Route path='/' element={<Homepage />} />
+          <Route path='/train-my-mind-react/' element={<Homepage />} />
           <Route path='/rules' element={<Rulespage />} />
           <Route path='/about' element={<Aboutpage />} />
           <Route path='/statistic' element={<Statisticpage />} />
