@@ -13,21 +13,13 @@ import { getRandomCloseCardId } from "../../helpers/randomGenerator";
 import { NO_ICON } from "../../const";
 
 import "./GameControls.scss";
+import { useHandleGameControls } from "../../hooks/useHandleGameControls";
 
 const GameControls: React.FC = () => {
-  const {
-    gameCtx: {
-      userChooseCard,
-      cards,
-      targetCardID,
-      targetCardHightlight,
-      score,
-      closeCards,
-      round,
-      bestScore,
-    },
-    dispatch,
-  } = useContext(GameContext);
+  const { gameCtx, dispatch } = useContext(GameContext);
+
+  const { targetCardHightlight, closeCards, cards, userChooseCard, round } =
+    gameCtx;
 
   useEffect(() => {
     if (targetCardHightlight && closeCards.length > 3) {
@@ -47,59 +39,8 @@ const GameControls: React.FC = () => {
     } //eslint-disable-next-line
   }, [targetCardHightlight, cards, dispatch]);
 
-  const handleNewGame = (): void => {
-    if (round === 3 && closeCards.length === 3) {
-      if (bestScore < score) {
-        localStorage.setItem("bestscore", score.toString());
-        dispatch({ type: actionGameTypes.setBestScore, payload: score });
-      }
-      dispatch({ type: actionGameTypes.setScore, payload: 0 });
-      dispatch({ type: actionGameTypes.setRound, payload: 1 });
-    }
-  };
-
-  const handleNextRound = (): void => {
-    if (round < 3) {
-      dispatch({ type: actionGameTypes.setRound, payload: round + 1 });
-    }
-  };
-
-  const handleCheckAnswer = (): void => {
-    if (closeCards.length === 3) {
-      dispatch({
-        type: actionGameTypes.setTargetCardHighligth,
-        payload: false,
-      });
-      return;
-    }
-
-    const result = checkAnswer(
-      [
-        cards[targetCardID].cardType,
-        cards[targetCardID].cardColor,
-        cards[targetCardID].countItem,
-      ],
-      [
-        userChooseCard.cardType !== NO_ICON
-          ? userChooseCard.cardType
-          : undefined,
-        userChooseCard.cardColor !== "#FFF"
-          ? userChooseCard.cardColor
-          : undefined,
-        userChooseCard.countItem !== 0 ? userChooseCard.countItem : undefined,
-      ]
-    );
-    dispatch({ type: actionGameTypes.setPoints, payload: result });
-
-    dispatch({
-      type: actionGameTypes.removeFromCloseCards,
-      payload: targetCardID,
-    });
-
-    dispatch({ type: actionGameTypes.openCard, payload: targetCardID });
-
-    dispatch({ type: actionGameTypes.setScore, payload: score + result });
-  };
+  const [handleCheckAnswer, handleNextRound, handleNewGame] =
+    useHandleGameControls({ ...gameCtx, dispatch });
 
   return (
     <div className='gamecontrols'>
@@ -110,7 +51,7 @@ const GameControls: React.FC = () => {
         </button>
       ) : round < 3 ? (
         <button className='checkbutton' onClick={handleNextRound}>
-          next round
+          Next round
         </button>
       ) : (
         <button className='checkbutton' onClick={handleNewGame}>
