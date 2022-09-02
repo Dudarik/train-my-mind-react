@@ -9,10 +9,16 @@ const GameInfo = () => {
 
   return (
     <div className='gameinfo'>
-      <span className='gcspan'>score: {score}</span>
-      <span className='gcspan'>bestScore: {bestScore}</span>
+      <div className='gcdiv'>
+        Раунд: <span>{round}</span>
+      </div>
+      <div className='gcdiv'>
+        Очки: <span>{score}</span>
+      </div>
+      <div className='gcdiv'>
+        Рекорд: <span>{bestScore}</span>
+      </div>
       {/* <span className='gcspan'>tryCount: {tryCount}</span> */}
-      <span className='gcspan'>round: {round}</span>
     </div>
   );
 };

@@ -1,0 +1,33 @@
+.rules-container {
+  padding: 1rem;
+  transition: all 0.5s;
+
+  @media screen and (min-width: 740px) {
+    padding: 1rem 5rem;
+  }
+  .rules {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 3rem;
+
+    h1 {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      line-height: 2rem;
+    }
+    li {
+      line-height: 1.5rem;
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+}
