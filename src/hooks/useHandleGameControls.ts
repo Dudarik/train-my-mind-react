@@ -1,6 +1,7 @@
 import { MouseEventHandler } from "react";
 import { NO_ICON } from "../const";
 import { actionGameTypes } from "../context/enums";
+import { TGameActions } from "../context/types";
 import { checkAnswer } from "../helpers/checkAnswer";
 import { ICard } from "../interfaces/ICard";
 
@@ -12,7 +13,7 @@ type TProps = {
   bestScore: number;
   score: number;
   userChooseCard: ICard;
-  dispatch: any;
+  dispatch: (action: TGameActions) => void;
 };
 export const useHandleGameControls = (props: TProps): MouseEventHandler[] => {
   const {
